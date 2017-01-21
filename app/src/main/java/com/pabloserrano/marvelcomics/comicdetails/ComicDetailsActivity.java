@@ -24,9 +24,10 @@ public class ComicDetailsActivity extends BaseActivity implements Presenter.View
     }
 
     private void initializeActivity(){
-        showLoading();
         comic = getIntent().getExtras().getParcelable(COMIC);
         Timber.e(comic.toString());
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
     @Override
