@@ -57,6 +57,36 @@ public class Result implements Parcelable {
         format = in.readString();
         pageCount = in.readInt();
         resourceURI = in.readString();
+        prices = in.createTypedArrayList(Price.CREATOR);
+        thumbnail = in.readParcelable(Thumbnail.class.getClassLoader());
+        creators = in.readParcelable(Creators.class.getClassLoader());
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeInt(digitalId);
+        dest.writeString(title);
+        dest.writeFloat(issueNumber);
+        dest.writeString(variantDescription);
+        dest.writeString(description);
+        dest.writeString(modified);
+        dest.writeString(isbn);
+        dest.writeString(upc);
+        dest.writeString(diamondCode);
+        dest.writeString(ean);
+        dest.writeString(issn);
+        dest.writeString(format);
+        dest.writeInt(pageCount);
+        dest.writeString(resourceURI);
+        dest.writeTypedList(prices);
+        dest.writeParcelable(thumbnail, flags);
+        dest.writeParcelable(creators, flags);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
     public static final Creator<Result> CREATOR = new Creator<Result>() {
@@ -345,29 +375,5 @@ public class Result implements Parcelable {
                 ", events=" + events +
                 ", additionalProperties=" + additionalProperties +
                 '}';
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(id);
-        parcel.writeInt(digitalId);
-        parcel.writeString(title);
-        parcel.writeFloat(issueNumber);
-        parcel.writeString(variantDescription);
-        parcel.writeString(description);
-        parcel.writeString(modified);
-        parcel.writeString(isbn);
-        parcel.writeString(upc);
-        parcel.writeString(diamondCode);
-        parcel.writeString(ean);
-        parcel.writeString(issn);
-        parcel.writeString(format);
-        parcel.writeInt(pageCount);
-        parcel.writeString(resourceURI);
     }
 }

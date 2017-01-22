@@ -2,4 +2,9 @@
     <string name="app_name">Marvel Comics</string>
     <string name="generic_error">Something went wrong!</string>
     <string name="retry">RETRY</string>
+    <string name="by">By:\u0020</string>
+    <string name="unknown">Unknown</string>
+    <string name="pages">Pages:\u0020</string>
+    <string name="currency">\u0020$</string>
+    <string name="summary">Summary</string>
 </resources>

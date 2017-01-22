@@ -1,70 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".main.MainActivity">
+    android:layout_marginTop="?attr/actionBarSize"
+    tools:context=".comicdetails.ComicDetailsActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="250dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_margin="@dimen/normal_margin"
-        app:srcCompat="@mipmap/ic_launcher" />
-
-    <TextView
-        android:id="@+id/comic_authors"
-        android:layout_width="wrap_content"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Stan Lee and others"
-        android:layout_below="@+id/imageView"
-        android:layout_alignLeft="@+id/comic_description"
-        android:layout_alignStart="@+id/comic_description" />
+        android:layout_margin="@dimen/activity_horizontal_margin">
 
-    <TextView
-        android:id="@+id/comic_page_count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="230 pages"
-        android:layout_below="@+id/comic_authors"
-        android:layout_alignLeft="@+id/comic_authors"
-        android:layout_alignStart="@+id/comic_authors" />
+        <ImageView
+            android:id="@+id/imageViewComic"
+            android:layout_width="@dimen/comic_width"
+            android:layout_height="@dimen/comic_height"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            app:srcCompat="@mipmap/ic_launcher" />
 
-    <TextView
-        android:id="@+id/comic_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Long description"
-        android:layout_marginTop="18dp"
-        android:layout_below="@+id/comic_page_count"
-        android:layout_alignLeft="@+id/imageView"
-        android:layout_alignStart="@+id/imageView" />
+        <TextView
+            android:id="@+id/comic_authors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/comic_description"
+            android:layout_alignStart="@+id/comic_description"
+            android:layout_below="@+id/imageViewComic"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:text="Stan Lee and others" />
 
-    <TextView
-        android:id="@+id/comic_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="85dp"
-        android:text="14$"
-        android:layout_alignTop="@+id/imageView"
-        android:layout_toRightOf="@+id/imageView"
-        android:layout_toEndOf="@+id/imageView"
-        android:layout_marginLeft="22dp"
-        android:layout_marginStart="22dp" />
+        <TextView
+            android:id="@+id/comic_page_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/comic_authors"
+            android:layout_alignStart="@+id/comic_authors"
+            android:layout_below="@+id/comic_authors"
+            android:text="230 pages" />
 
-    <TextView
-        android:id="@+id/comic_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Title"
-        android:layout_alignTop="@+id/imageView"
-        android:layout_alignRight="@+id/comic_price"
-        android:layout_alignEnd="@+id/comic_price"
-        android:layout_marginTop="22dp" />
+        <TextView
+            android:id="@+id/comic_summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/imageViewComic"
+            android:layout_alignStart="@+id/imageViewComic"
+            android:layout_below="@+id/comic_page_count"
+            android:layout_marginTop="18dp"
+            android:text="@string/summary"
+            android:textSize="@dimen/text_size_title"
+            android:textStyle="bold" />
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/comic_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/comic_summary"
+            android:layout_alignStart="@+id/comic_summary"
+            android:layout_below="@+id/comic_summary"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:text="Long description"
+            android:textSize="@dimen/text_size_title" />
+
+        <TextView
+            android:id="@+id/comic_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_alignTop="@+id/imageViewComic"
+            android:layout_marginLeft="@dimen/normal_margin"
+            android:layout_toEndOf="@+id/imageViewComic"
+            android:layout_toRightOf="@+id/imageViewComic"
+            android:text="Title"
+            android:textSize="@dimen/text_size_title"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/comic_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/comic_title"
+            android:layout_alignRight="@+id/comic_title"
+            android:layout_below="@+id/comic_title"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:text="14$"
+            android:textSize="@dimen/text_size_title"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+</ScrollView>
