@@ -28,7 +28,7 @@ public class MainActivity extends BaseActivity implements MainPresenterImp.View 
     RecyclerView recyclerView;
 
     private ComicsAdapter adapter;
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

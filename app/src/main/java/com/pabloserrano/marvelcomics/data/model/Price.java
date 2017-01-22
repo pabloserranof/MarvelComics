@@ -10,12 +10,12 @@ import java.util.Map;
 public class Price implements Parcelable {
 
     private String type;
-    private String price;
+    private float price;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     protected Price(Parcel in) {
         type = in.readString();
-        price = in.readString();
+        price = in.readFloat();
     }
 
     public static final Creator<Price> CREATOR = new Creator<Price>() {
@@ -38,11 +38,11 @@ public class Price implements Parcelable {
         this.type = type;
     }
 
-    public String getPrice() {
+    public float getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 
@@ -62,7 +62,7 @@ public class Price implements Parcelable {
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(type);
-        parcel.writeString(price);
+        parcel.writeFloat(price);
     }
 
     @Override

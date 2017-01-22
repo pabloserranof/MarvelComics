@@ -20,6 +20,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 
 import com.pabloserrano.marvelcomics.R;
 import com.pabloserrano.marvelcomics.data.model.Result;
@@ -28,18 +30,18 @@ import com.pabloserrano.marvelcomics.main.MainPresenterImp;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ComicsAdapter extends RecyclerView.Adapter<ComicViewHolder> {
+public class ComicsAdapter extends RecyclerView.Adapter<ComicViewHolder> implements Filterable {
 
     private final MainPresenterImp presenter;
-    private final List<Result> newsList;
+    final List<Result> comicsList;
 
     public ComicsAdapter(MainPresenterImp presenter) {
         this.presenter = presenter;
-        this.newsList = new ArrayList<>();
+        this.comicsList = new ArrayList<>();
     }
 
     public void addAll(List<Result> collection) {
-        newsList.addAll(collection);
+        comicsList.addAll(collection);
     }
 
     @Override
@@ -51,11 +53,16 @@ public class ComicsAdapter extends RecyclerView.Adapter<ComicViewHolder> {
 
     @Override
     public void onBindViewHolder(ComicViewHolder holder, int position) {
-        holder.render(newsList.get(position));
+        holder.render(comicsList.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return newsList.size();
+        return comicsList.size();
+    }
+
+    @Override
+    public Filter getFilter() {
+        return new FilterComics(this, comicsList);
     }
 }
