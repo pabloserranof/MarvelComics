@@ -1,4 +1,4 @@
-package com.pabloserrano.marvelcomics.main.adapter;
+package com.pabloserrano.marvelcomics.ui.adapter;
 
 import android.widget.Filter;
 

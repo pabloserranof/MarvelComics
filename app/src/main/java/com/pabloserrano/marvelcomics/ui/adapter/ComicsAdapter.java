@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.pabloserrano.marvelcomics.main.adapter;
+package com.pabloserrano.marvelcomics.ui.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -25,7 +25,7 @@ import android.widget.Filterable;
 
 import com.pabloserrano.marvelcomics.R;
 import com.pabloserrano.marvelcomics.data.model.Result;
-import com.pabloserrano.marvelcomics.main.MainPresenterImp;
+import com.pabloserrano.marvelcomics.presenter.MainPresenterImp;
 
 import java.util.ArrayList;
 import java.util.List;

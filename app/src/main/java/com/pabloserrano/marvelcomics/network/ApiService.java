@@ -1,4 +1,4 @@
-package com.pabloserrano.marvelcomics.api;
+package com.pabloserrano.marvelcomics.network;
 
 import com.pabloserrano.marvelcomics.data.model.MarvelComics;
 

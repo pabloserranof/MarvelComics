@@ -1,10 +1,10 @@
-package com.pabloserrano.marvelcomics.module;
+package com.pabloserrano.marvelcomics.injection.module;
 
 import android.app.Application;
 
-import com.pabloserrano.marvelcomics.api.ApiService;
-import com.pabloserrano.marvelcomics.api.AuthInterceptor;
-import com.pabloserrano.marvelcomics.api.TimeProvider;
+import com.pabloserrano.marvelcomics.network.ApiService;
+import com.pabloserrano.marvelcomics.network.AuthInterceptor;
+import com.pabloserrano.marvelcomics.network.TimeProvider;
 import com.pabloserrano.marvelcomics.utils.NetworkUtils;
 
 import java.io.IOException;

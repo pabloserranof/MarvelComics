@@ -13,7 +13,7 @@
  *   limitations under the License.
  */
 
-package com.pabloserrano.marvelcomics.api;
+package com.pabloserrano.marvelcomics.network;
 
 public class MarvelApiException extends Exception {
   private final int httpCode;

@@ -1,4 +1,4 @@
-package com.pabloserrano.marvelcomics.module;
+package com.pabloserrano.marvelcomics.injection.module;
 
 import android.app.Application;
 

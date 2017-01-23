@@ -1,6 +1,5 @@
-package com.pabloserrano.marvelcomics.main;
+package com.pabloserrano.marvelcomics.presenter;
 
-import com.pabloserrano.marvelcomics.baseclasses.Presenter;
 import com.pabloserrano.marvelcomics.data.MarvelDataSource;
 import com.pabloserrano.marvelcomics.data.model.MarvelComics;
 import com.pabloserrano.marvelcomics.data.model.Result;

@@ -1,4 +1,4 @@
-package com.pabloserrano.marvelcomics.comicdetails;
+package com.pabloserrano.marvelcomics.ui.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,8 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.pabloserrano.marvelcomics.R;
-import com.pabloserrano.marvelcomics.baseclasses.BaseActivity;
-import com.pabloserrano.marvelcomics.baseclasses.Presenter;
+import com.pabloserrano.marvelcomics.presenter.Presenter;
 import com.pabloserrano.marvelcomics.data.model.Creators;
 import com.pabloserrano.marvelcomics.data.model.Item;
 import com.pabloserrano.marvelcomics.data.model.Price;

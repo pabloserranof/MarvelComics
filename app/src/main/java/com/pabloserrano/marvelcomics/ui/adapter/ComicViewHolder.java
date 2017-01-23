@@ -1,4 +1,4 @@
-package com.pabloserrano.marvelcomics.main.adapter;
+package com.pabloserrano.marvelcomics.ui.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.pabloserrano.marvelcomics.R;
 import com.pabloserrano.marvelcomics.data.model.Result;
-import com.pabloserrano.marvelcomics.main.MainPresenterImp;
+import com.pabloserrano.marvelcomics.presenter.MainPresenterImp;
 import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;

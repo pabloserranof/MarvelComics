@@ -2,7 +2,7 @@ package com.pabloserrano.marvelcomics;
 
 import com.pabloserrano.marvelcomics.data.MarvelDataSource;
 import com.pabloserrano.marvelcomics.data.MarvelRepositoryImpl;
-import com.pabloserrano.marvelcomics.main.MainPresenterImp;
+import com.pabloserrano.marvelcomics.presenter.MainPresenterImp;
 
 import org.junit.Before;
 import org.mockito.ArgumentCaptor;

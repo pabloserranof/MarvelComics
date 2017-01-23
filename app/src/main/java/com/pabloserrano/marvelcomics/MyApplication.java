@@ -3,9 +3,11 @@ package com.pabloserrano.marvelcomics;
 import android.app.Application;
 import android.support.annotation.VisibleForTesting;
 
-import com.pabloserrano.marvelcomics.module.AppModule;
-import com.pabloserrano.marvelcomics.module.NetModule;
-import com.pabloserrano.marvelcomics.module.RepositoryModule;
+import com.pabloserrano.marvelcomics.injection.component.AppComponent;
+import com.pabloserrano.marvelcomics.injection.component.DaggerAppComponent;
+import com.pabloserrano.marvelcomics.injection.module.AppModule;
+import com.pabloserrano.marvelcomics.injection.module.NetModule;
+import com.pabloserrano.marvelcomics.injection.module.RepositoryModule;
 import com.squareup.leakcanary.LeakCanary;
 
 import timber.log.Timber;

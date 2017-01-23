@@ -1,4 +1,4 @@
-package com.pabloserrano.marvelcomics.baseclasses;
+package com.pabloserrano.marvelcomics.ui.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.pabloserrano.marvelcomics.R;
+import com.pabloserrano.marvelcomics.presenter.Presenter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

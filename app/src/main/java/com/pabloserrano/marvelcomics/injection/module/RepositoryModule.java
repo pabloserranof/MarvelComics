@@ -1,10 +1,10 @@
-package com.pabloserrano.marvelcomics.module;
+package com.pabloserrano.marvelcomics.injection.module;
 
-import com.pabloserrano.marvelcomics.api.ApiService;
+import com.pabloserrano.marvelcomics.network.ApiService;
 import com.pabloserrano.marvelcomics.data.MarvelRepositoryImpl;
 import com.pabloserrano.marvelcomics.data.local.MarvelLocalDataSource;
 import com.pabloserrano.marvelcomics.data.remote.MarvelRemoteDataSource;
-import com.pabloserrano.marvelcomics.main.MainPresenterImp;
+import com.pabloserrano.marvelcomics.presenter.MainPresenterImp;
 
 import javax.inject.Singleton;
 

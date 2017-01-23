@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.pabloserrano.marvelcomics.baseclasses;
+package com.pabloserrano.marvelcomics.presenter;
 
 public class Presenter<T extends Presenter.View> {
 
@@ -41,6 +41,5 @@ public class Presenter<T extends Presenter.View> {
         void showLoading();
 
         void hideLoading();
-
     }
 }

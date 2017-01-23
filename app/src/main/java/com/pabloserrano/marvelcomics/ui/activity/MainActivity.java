@@ -1,4 +1,4 @@
-package com.pabloserrano.marvelcomics.main;
+package com.pabloserrano.marvelcomics.ui.activity;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
@@ -12,11 +12,11 @@ import android.view.View;
 
 import com.pabloserrano.marvelcomics.MyApplication;
 import com.pabloserrano.marvelcomics.R;
-import com.pabloserrano.marvelcomics.baseclasses.BaseActivity;
-import com.pabloserrano.marvelcomics.comicdetails.ComicDetailsActivity;
 import com.pabloserrano.marvelcomics.data.model.MarvelComics;
 import com.pabloserrano.marvelcomics.data.model.Result;
-import com.pabloserrano.marvelcomics.main.adapter.ComicsAdapter;
+import com.pabloserrano.marvelcomics.presenter.MainPresenterImp;
+import com.pabloserrano.marvelcomics.ui.adapter.ComicsAdapter;
+import com.pabloserrano.marvelcomics.ui.fragment.DialogFilterFragment;
 
 import javax.inject.Inject;
 

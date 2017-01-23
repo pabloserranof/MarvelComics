@@ -1,4 +1,4 @@
-package com.pabloserrano.marvelcomics.main;
+package com.pabloserrano.marvelcomics.ui.fragment;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -28,7 +28,7 @@ public class DialogFilterFragment extends DialogFragment {
 
     private EditText editTextBudget;
 
-    static DialogFilterFragment newInstance(int budget) {
+    public static DialogFilterFragment newInstance(int budget) {
         DialogFilterFragment dialogFilterFragment = new DialogFilterFragment();
         Bundle bundle = new Bundle();
         bundle.putInt(BUDGET, budget);
