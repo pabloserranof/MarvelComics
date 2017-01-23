@@ -12,6 +12,7 @@ public class FilterComics extends Filter {
     private final ComicsAdapter comicsAdapter;
     private final List<Result> comicList;
     private final List<Result> comicListFiltered;
+    private int numberOfPages;
 
     public FilterComics(ComicsAdapter comicsAdapter, List<Result> comicList) {
         this.comicsAdapter = comicsAdapter;
@@ -24,11 +25,13 @@ public class FilterComics extends Filter {
         float budgetLimit = Float.valueOf(budget.toString());
         comicListFiltered.clear();
         final FilterResults results = new FilterResults();
-        float currentAcumulatedPrice = 0;
+        float totalPrice = 0;
+        numberOfPages = 0;
         for (final Result comic : comicList) {
-            currentAcumulatedPrice += comic.getPrices().get(0).getPrice();
-            if (currentAcumulatedPrice <= budgetLimit) {
+            totalPrice += comic.getPrices().get(0).getPrice();
+            if (totalPrice <= budgetLimit) {
                 comicListFiltered.add(comic);
+                numberOfPages += comic.getPageCount();
             }
         }
         results.values = comicListFiltered;
@@ -38,7 +41,7 @@ public class FilterComics extends Filter {
 
     @Override
     protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-        comicsAdapter.addFiltered((List<Result>) filterResults.values);
+        comicsAdapter.addFiltered((List<Result>) filterResults.values, numberOfPages);
         comicsAdapter.notifyDataSetChanged();
     }
 }

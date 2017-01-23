@@ -32,6 +32,12 @@ import java.util.List;
 
 public class ComicsAdapter extends RecyclerView.Adapter<ComicViewHolder> implements Filterable {
 
+    public interface OnComicsFiltered{
+        void numberOfPages(int numberOfPages);
+    }
+
+    private OnComicsFiltered onComicsFiltered;
+
     private final MainPresenterImp presenter;
     private final List<Result> comicListDisplayed;
     private final List<Result> comicListBackUp;
@@ -42,14 +48,19 @@ public class ComicsAdapter extends RecyclerView.Adapter<ComicViewHolder> impleme
         this.comicListBackUp = new ArrayList<>();
     }
 
+    public void setOnComicsFiltered(OnComicsFiltered callback){
+        this.onComicsFiltered = callback;
+    }
+
     public void addAll(List<Result> comicList) {
         this.comicListDisplayed.addAll(comicList);
         this.comicListBackUp.addAll(comicList);
     }
 
-    public void addFiltered(List<Result> comicListFiltered) {
+    public void addFiltered(List<Result> comicListFiltered, int numberOfPages) {
         this.comicListDisplayed.clear();
         this.comicListDisplayed.addAll(comicListFiltered);
+        onComicsFiltered.numberOfPages(numberOfPages);
     }
 
     @Override

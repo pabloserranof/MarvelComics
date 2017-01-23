@@ -22,7 +22,7 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 
-public class MainActivity extends BaseActivity implements MainPresenterImp.View, DialogFilterFragment.OnFilterSelected {
+public class MainActivity extends BaseActivity implements MainPresenterImp.View, DialogFilterFragment.OnFilterSelected, ComicsAdapter.OnComicsFiltered {
 
     @Inject
     MainPresenterImp presenter;
@@ -95,6 +95,15 @@ public class MainActivity extends BaseActivity implements MainPresenterImp.View,
     }
 
     @Override
+    public void numberOfPages(int numberOfPages) {
+        Snackbar.make(findViewById(android.R.id.content), numberOfPages + getResources().getString(R.string.you_can_read), Snackbar.LENGTH_INDEFINITE).setAction(R.string.ok, new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            }
+        }).show();
+    }
+
+    @Override
     public int getLayoutId() {
         return R.layout.activity_main;
     }
@@ -109,6 +118,7 @@ public class MainActivity extends BaseActivity implements MainPresenterImp.View,
 
     private void initializeAdapter() {
         adapter = new ComicsAdapter(presenter);
+        adapter.setOnComicsFiltered(this);
     }
 
     private void initializeRecyclerView() {

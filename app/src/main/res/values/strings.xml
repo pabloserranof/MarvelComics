@@ -13,4 +13,6 @@
     <string name="searchfilter">Search Filter</string>
     <string name="in_dollars">in $</string>
     <string name="your_budget">Your budget</string>
+    <string name="ok">OK</string>
+    <string name="you_can_read">\u0020 pages you can read with these comics</string>
 </resources>
