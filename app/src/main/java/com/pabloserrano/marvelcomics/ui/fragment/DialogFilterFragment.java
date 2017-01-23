@@ -49,14 +49,6 @@ public class DialogFilterFragment extends DialogFragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        int style = DialogFragment.STYLE_NORMAL;
-        int theme = android.R.style.Theme_Holo_Light_Dialog;
-        setStyle(style, theme);
-    }
-
-    @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = getActivity().getLayoutInflater();

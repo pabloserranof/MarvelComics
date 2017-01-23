@@ -64,7 +64,6 @@ public class ComicViewHolder extends RecyclerView.ViewHolder {
 
     private void renderComicPageCount(int pageCount) {
         this.pageCount.setText(itemView.getResources().getString(R.string.pages) + pageCount);
-
     }
 
     private void renderComicAuthors(Creators creators) {

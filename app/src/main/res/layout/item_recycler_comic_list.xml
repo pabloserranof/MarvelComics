@@ -25,6 +25,7 @@
             android:layout_alignTop="@+id/comic_thumbnail"
             android:layout_marginRight="@dimen/normal_margin"
             android:layout_toRightOf="@+id/comic_thumbnail"
+            android:textColor="@color/primary_text"
             android:textSize="@dimen/text_size_title_big"
             android:textStyle="bold" />
 
@@ -36,6 +37,7 @@
             android:layout_marginTop="20dp"
             android:layout_toEndOf="@+id/comic_thumbnail"
             android:layout_toRightOf="@+id/comic_thumbnail"
+            android:textColor="@color/secondary_text"
             android:textSize="@dimen/text_size_title"
             android:textStyle="bold" />
 
@@ -47,6 +49,7 @@
             android:layout_alignEnd="@+id/comic_title"
             android:layout_alignRight="@+id/comic_title"
             android:gravity="end"
+            android:textColor="@color/secondary_text"
             android:textSize="@dimen/text_size_title"
             android:textStyle="bold" />
 
