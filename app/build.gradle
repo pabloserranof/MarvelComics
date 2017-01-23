@@ -42,7 +42,7 @@ ext {
     butterknifeVersion = '8.0.1'
     gsonVersion = '2.6.1'
     picassoVersion = '2.5.2'
-    okhttpVersion = '3.4.2'
+    okhttpVersion = '3.5.0'
     picassoHttpDownloaderVersion = '1.1.0'
 
     // Testing
