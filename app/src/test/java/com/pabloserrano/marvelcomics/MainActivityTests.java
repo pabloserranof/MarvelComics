@@ -30,7 +30,7 @@ public class MainActivityTests {
             new IntentsTestRule<>(MainActivity.class, true, false);
 
     @Mock
-    private MarvelRepositoryImpl repository;
+    private MarvelRepositoryImpl mockRepository;
 
     @Captor
     private ArgumentCaptor<MarvelDataSource.GetMarvelCallback> getNewsCallback;

@@ -4,18 +4,18 @@ import android.support.annotation.NonNull;
 
 public class MarvelRepositoryImpl implements MarvelDataSource {
 
-    private MarvelDataSource guardianNewsLocalDataSource;
-    private MarvelDataSource guardianNewsRemoteDataSource;
+    private MarvelDataSource marvelLocalDataSource;
+    private MarvelDataSource marvelRemoteDataSource;
 
-    public MarvelRepositoryImpl(MarvelDataSource guardianNewsLocalDataSource,
-                                MarvelDataSource guardianNewsRemoteDataSource) {
-        this.guardianNewsLocalDataSource = guardianNewsLocalDataSource;
-        this.guardianNewsRemoteDataSource = guardianNewsRemoteDataSource;
+    public MarvelRepositoryImpl(MarvelDataSource marvelLocalDataSource,
+                                MarvelDataSource marvelRemoteDataSource) {
+        this.marvelLocalDataSource = marvelLocalDataSource;
+        this.marvelRemoteDataSource = marvelRemoteDataSource;
     }
 
     @Override
-    public void getMarvelComics(@NonNull GetMarvelCallback getCityListCallback) {
+    public void getMarvelComics(@NonNull GetMarvelCallback getMarvelCallback) {
         // Only reading from the remote datasource for now
-        guardianNewsRemoteDataSource.getMarvelComics(getCityListCallback);
+        marvelRemoteDataSource.getMarvelComics(getMarvelCallback);
     }
 }

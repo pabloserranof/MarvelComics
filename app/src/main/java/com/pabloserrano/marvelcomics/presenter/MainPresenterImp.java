@@ -46,7 +46,7 @@ public class MainPresenterImp extends Presenter<MainPresenterImp.View> {
 
         void showNotAvailable();
 
-        void showComics(MarvelComics guardianSearches);
+        void showComics(MarvelComics marvelComics);
 
         void openComicScreen(Result comic);
     }
