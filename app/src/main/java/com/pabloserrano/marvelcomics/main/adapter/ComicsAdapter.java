@@ -33,15 +33,23 @@ import java.util.List;
 public class ComicsAdapter extends RecyclerView.Adapter<ComicViewHolder> implements Filterable {
 
     private final MainPresenterImp presenter;
-    final List<Result> comicsList;
+    private final List<Result> comicListDisplayed;
+    private final List<Result> comicListBackUp;
 
     public ComicsAdapter(MainPresenterImp presenter) {
         this.presenter = presenter;
-        this.comicsList = new ArrayList<>();
+        this.comicListDisplayed = new ArrayList<>();
+        this.comicListBackUp = new ArrayList<>();
     }
 
-    public void addAll(List<Result> collection) {
-        comicsList.addAll(collection);
+    public void addAll(List<Result> comicList) {
+        this.comicListDisplayed.addAll(comicList);
+        this.comicListBackUp.addAll(comicList);
+    }
+
+    public void addFiltered(List<Result> comicListFiltered) {
+        this.comicListDisplayed.clear();
+        this.comicListDisplayed.addAll(comicListFiltered);
     }
 
     @Override
@@ -53,16 +61,16 @@ public class ComicsAdapter extends RecyclerView.Adapter<ComicViewHolder> impleme
 
     @Override
     public void onBindViewHolder(ComicViewHolder holder, int position) {
-        holder.render(comicsList.get(position));
+        holder.render(comicListDisplayed.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return comicsList.size();
+        return comicListDisplayed.size();
     }
 
     @Override
     public Filter getFilter() {
-        return new FilterComics(this, comicsList);
+        return new FilterComics(this, comicListBackUp);
     }
 }

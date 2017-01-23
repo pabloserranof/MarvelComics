@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <TextView
+        android:text="@string/your_budget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:id="@+id/textView" />
+
+    <EditText
+        android:id="@+id/editTextBudget"
+        android:layout_width="@dimen/width_budget_filter"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:maxLength="5"
+        android:maxLines="1"
+        android:hint="@string/in_dollars"
+        android:inputType="number" />
+</LinearLayout>

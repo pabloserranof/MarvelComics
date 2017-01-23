@@ -13,4 +13,5 @@
     <dimen name="width_section">140dp</dimen>
     <dimen name="comic_width">180dp</dimen>
     <dimen name="comic_height">270dp</dimen>
+    <dimen name="width_budget_filter">80dp</dimen>
 </resources>

@@ -5,6 +5,12 @@
     <string name="by">By:\u0020</string>
     <string name="unknown">Unknown</string>
     <string name="pages">Pages:\u0020</string>
-    <string name="currency">\u0020$</string>
+    <string name="currency">\u0020 $</string>
     <string name="summary">Summary</string>
+    <string name="filterlist">filterList</string>
+    <string name="apply">Apply</string>
+    <string name="cancel">Cancel</string>
+    <string name="searchfilter">Search Filter</string>
+    <string name="in_dollars">in $</string>
+    <string name="your_budget">Your budget</string>
 </resources>

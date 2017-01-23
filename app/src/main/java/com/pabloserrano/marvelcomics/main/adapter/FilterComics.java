@@ -4,7 +4,6 @@ import android.widget.Filter;
 
 import com.pabloserrano.marvelcomics.data.model.Result;
 
-import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -39,8 +38,7 @@ public class FilterComics extends Filter {
 
     @Override
     protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-        comicsAdapter.comicsList.clear();
-        comicsAdapter.comicsList.addAll((Collection<Result>) filterResults.values);
+        comicsAdapter.addFiltered((List<Result>) filterResults.values);
         comicsAdapter.notifyDataSetChanged();
     }
 }
