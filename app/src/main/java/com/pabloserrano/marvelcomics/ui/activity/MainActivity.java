@@ -32,6 +32,7 @@ public class MainActivity extends BaseActivity implements MainPresenterImp.View,
 
     private ComicsAdapter adapter;
     private int currentBudget = -1;
+    private boolean isDataFetched = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,14 +54,16 @@ public class MainActivity extends BaseActivity implements MainPresenterImp.View,
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.filter_list:
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                Fragment prev = getFragmentManager().findFragmentByTag(DialogFilterFragment.TAG);
-                if (prev != null) {
-                    ft.remove(prev);
+                if (isDataFetched) {
+                    FragmentTransaction ft = getFragmentManager().beginTransaction();
+                    Fragment prev = getFragmentManager().findFragmentByTag(DialogFilterFragment.TAG);
+                    if (prev != null) {
+                        ft.remove(prev);
+                    }
+                    ft.addToBackStack(null);
+                    DialogFilterFragment newFragment = DialogFilterFragment.newInstance(currentBudget);
+                    newFragment.show(ft, DialogFilterFragment.TAG);
                 }
-                ft.addToBackStack(null);
-                DialogFilterFragment newFragment = DialogFilterFragment.newInstance(currentBudget);
-                newFragment.show(ft, DialogFilterFragment.TAG);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -71,6 +74,7 @@ public class MainActivity extends BaseActivity implements MainPresenterImp.View,
     public void showComics(MarvelComics marvelComics) {
         adapter.addAll(marvelComics.getData().getResults());
         adapter.notifyDataSetChanged();
+        isDataFetched = true;
     }
 
     @Override
