@@ -8,13 +8,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.pabloserrano.marvelcomics.R;
-import com.pabloserrano.marvelcomics.presenter.Presenter;
 import com.pabloserrano.marvelcomics.data.model.Creators;
 import com.pabloserrano.marvelcomics.data.model.Item;
 import com.pabloserrano.marvelcomics.data.model.Price;
 import com.pabloserrano.marvelcomics.data.model.Result;
 import com.pabloserrano.marvelcomics.data.model.Thumbnail;
-import com.squareup.picasso.Picasso;
+import com.pabloserrano.marvelcomics.network.ImageLoader;
+import com.pabloserrano.marvelcomics.presenter.Presenter;
 
 import java.util.List;
 
@@ -79,7 +79,7 @@ public class ComicDetailsActivity extends BaseActivity implements Presenter.View
     }
 
     private void showPhoto(Thumbnail thumbnail) {
-        Picasso.with(this).load(thumbnail.getPath() + "." + thumbnail.getExtension()).into(imageComic);
+        ImageLoader.loadThumbnail(this, thumbnail, imageComic);
     }
 
     private void showTitle(String title) {

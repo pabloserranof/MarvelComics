@@ -11,8 +11,9 @@ import com.pabloserrano.marvelcomics.R;
 import com.pabloserrano.marvelcomics.data.model.Creators;
 import com.pabloserrano.marvelcomics.data.model.Item;
 import com.pabloserrano.marvelcomics.data.model.Result;
+import com.pabloserrano.marvelcomics.data.model.Thumbnail;
+import com.pabloserrano.marvelcomics.network.ImageLoader;
 import com.pabloserrano.marvelcomics.presenter.MainPresenterImp;
-import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -38,7 +39,7 @@ public class ComicViewHolder extends RecyclerView.ViewHolder {
 
     public void render(Result comic) {
         hookListeners(comic);
-        renderComicPhoto(comic.getThumbnail().getPath() + "." + comic.getThumbnail().getExtension());
+        renderComicPhoto(comic.getThumbnail());
         renderComicTitle(comic.getTitle());
         renderComicAuthors(comic.getCreators());
         renderComicPageCount(comic.getPageCount());
@@ -53,13 +54,8 @@ public class ComicViewHolder extends RecyclerView.ViewHolder {
         });
     }
 
-
-    private void renderComicPhoto(String thumbnail) {
-        try {
-            Picasso.with(getContext()).load(thumbnail).fit().centerCrop().into(thumbnailView);
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        }
+    private void renderComicPhoto(Thumbnail thumbnail) {
+        ImageLoader.loadThumbnail(getContext(), thumbnail, thumbnailView);
     }
 
     private void renderComicTitle(String title) {
