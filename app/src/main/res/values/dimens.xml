@@ -4,7 +4,8 @@
     <dimen name="activity_vertical_margin">12dp</dimen>
     <dimen name="normal_margin">12dp</dimen>
     <dimen name="thumbnail_width">100dp</dimen>
-    <dimen name="thumbnail_height">100dp</dimen>
+    <dimen name="thumbnail_height">150dp</dimen>
+    <dimen name="text_size_title_big">18sp</dimen>
     <dimen name="text_size_title">16sp</dimen>
     <dimen name="text_size_normal">12sp</dimen>
     <dimen name="round_corner_cardview">2dp</dimen>

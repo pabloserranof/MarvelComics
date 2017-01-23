@@ -33,7 +33,7 @@ public class ComicDetailsActivity extends BaseActivity implements Presenter.View
     TextView price;
     @BindView(R.id.comic_authors)
     TextView authors;
-    @BindView(R.id.comic_page_count)
+    @BindView(R.id.page_count)
     TextView pageCount;
     @BindView(R.id.comic_description)
     TextView description;
