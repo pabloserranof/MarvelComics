@@ -15,6 +15,8 @@
 
 package com.pabloserrano.marvelcomics.network;
 
+import com.pabloserrano.marvelcomics.network.exception.MarvelApiException;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 

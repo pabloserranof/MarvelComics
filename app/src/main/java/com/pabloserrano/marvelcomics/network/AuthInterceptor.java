@@ -16,6 +16,8 @@
 package com.pabloserrano.marvelcomics.network;
 
 
+import com.pabloserrano.marvelcomics.network.exception.MarvelApiException;
+
 import java.io.IOException;
 
 import okhttp3.HttpUrl;
