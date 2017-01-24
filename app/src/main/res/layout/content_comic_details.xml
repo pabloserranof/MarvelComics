@@ -19,6 +19,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:contentDescription="@string/comic_image"
             app:srcCompat="@mipmap/ic_launcher" />
 
         <TextView

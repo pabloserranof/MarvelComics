@@ -35,7 +35,6 @@ public class MarvelRemoteDataSource implements MarvelDataSource {
 
             @Override
             public void onFailure(Call<MarvelComics> call, Throwable t) {
-                Timber.e("onFailure " + t);
                 getMarvelCallback.onComicsNotAvailable();
             }
         });

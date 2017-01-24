@@ -5,7 +5,7 @@
     <string name="by">By:\u0020</string>
     <string name="unknown">Unknown</string>
     <string name="pages">Pages:\u0020</string>
-    <string name="currency">\u0020 $</string>
+    <string name="currency">%1$.2f\u0020$</string>
     <string name="summary">Summary</string>
     <string name="filterlist">filterList</string>
     <string name="apply">Apply</string>
@@ -15,4 +15,5 @@
     <string name="your_budget">Your budget</string>
     <string name="ok">OK</string>
     <string name="you_can_read">\u0020 pages you can read with these comics</string>
+    <string name="comic_image">comic_image</string>
 </resources>

@@ -23,7 +23,7 @@ import timber.log.Timber;
 
 public class ComicDetailsActivity extends BaseActivity implements Presenter.View {
 
-    public static final String COMIC = "COMIC";
+    private static final String COMIC = "COMIC";
 
     @BindView(R.id.imageViewComic)
     ImageView imageComic;
@@ -87,7 +87,7 @@ public class ComicDetailsActivity extends BaseActivity implements Presenter.View
     }
 
     private void showPrice(List<Price> prices) {
-        this.price.setText(prices.get(0).getPrice() + getResources().getString(R.string.currency));
+        this.price.setText(String.format(getResources().getString(R.string.currency), prices.get(0).getPrice()));
     }
 
     private void showAuthors(Creators creators) {

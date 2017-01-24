@@ -27,7 +27,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Presente
         initializeToolbar();
     }
 
-    public abstract int getLayoutId();
+    protected abstract int getLayoutId();
 
     @Override public void showLoading() {
         if (loadingView != null) {
