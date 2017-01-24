@@ -43,14 +43,14 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/page_count"
+            android:id="@+id/comic_price"
             android:layout_width="@dimen/width_section"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/comic_thumbnail"
             android:layout_alignEnd="@+id/comic_title"
             android:layout_alignRight="@+id/comic_title"
             android:gravity="end"
-            android:textColor="@color/secondary_text"
+            android:textColor="@color/primary_text"
             android:textSize="@dimen/text_size_title"
             android:textStyle="bold" />
 

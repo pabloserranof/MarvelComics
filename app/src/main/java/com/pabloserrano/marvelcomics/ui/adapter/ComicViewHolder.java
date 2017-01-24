@@ -28,8 +28,8 @@ public class ComicViewHolder extends RecyclerView.ViewHolder {
     ImageView thumbnailView;
     @BindView(R.id.comic_authors)
     TextView comicAuthors;
-    @BindView(R.id.page_count)
-    TextView pageCount;
+    @BindView(R.id.comic_price)
+    TextView price;
 
     public ComicViewHolder(View itemView, MainPresenterImp presenter) {
         super(itemView);
@@ -42,7 +42,7 @@ public class ComicViewHolder extends RecyclerView.ViewHolder {
         renderComicPhoto(comic.getThumbnail());
         renderComicTitle(comic.getTitle());
         renderComicAuthors(comic.getCreators());
-        renderComicPageCount(comic.getPageCount());
+        renderComicPrice(comic.getPrices().get(0).getPrice());
     }
 
     private void hookListeners(final Result result) {
@@ -62,8 +62,8 @@ public class ComicViewHolder extends RecyclerView.ViewHolder {
         comicTitle.setText(title);
     }
 
-    private void renderComicPageCount(int pageCount) {
-        this.pageCount.setText(itemView.getResources().getString(R.string.pages) + pageCount);
+    private void renderComicPrice(float price) {
+        this.price.setText(String.format(itemView.getResources().getString(R.string.currency), price));
     }
 
     private void renderComicAuthors(Creators creators) {
